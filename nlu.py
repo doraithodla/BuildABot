@@ -9,7 +9,7 @@ def getCommand(word):
         return (GETWORDINFO)
     elif word in ['quit','q','exit']:
         return (QUIT)
-    elif word in ['alternates', 'synonyms']:
+    elif word in ['alternates', 'synonyms','syn','synonym']:
         return (SYNONYMS)
     else:
         return (HELP)

@@ -13,7 +13,7 @@ context = None
 
 print_greeting_help()
 while True:
-    message = input("User ::  ")
+    message = input("User: ")
     action, word = extractInfo(message)
 
     if action == GETWORDINFO:
@@ -24,9 +24,8 @@ while True:
         #print(action, word)
         reply = getSynonyms(word)
     else:
-        reply = dontknow(word)
+        reply = dontknow(action)
 
-    print("WordBot  ::")
-    print(' '.join(reply))
+    print("WordBot: " + ' '.join(reply))
 
     #print(reply)
