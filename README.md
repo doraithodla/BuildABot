@@ -9,12 +9,15 @@ The parameter is the word whose meaning or synonyms you are trying to get
 
 The organization of the chatbot is pretty simple:
 
-1. A command line loop gets input from user, decodes the command, triggers an action and responds to the user from the reply sent from the action. For example:
+A command line loop gets input from user, decodes the command, triggers an action and responds to the user from the reply sent from the action. For example:
 
 whatis set
 
 a. checks whether 'whatis' is a valid command and maps it to an id 
+
 b. The id is used to dispatch to an action routine
+
 c. The action routine responds with a result 
+
 d. The result is displayed to the user
 
