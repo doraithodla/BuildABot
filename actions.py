@@ -1,6 +1,8 @@
 from nltk.corpus import wordnet
 from intents import *
 from help import help_text
+from botdata import *
+from random import randint
 
 def getMeaning(word):
     syns = wordnet.synsets(word)
@@ -31,6 +33,9 @@ def getHelp(context):
 
 def dontknow(action):
     return["Sorry. I don't understand %s" % action]
+
+def getGreeting():
+    return BOT_RESPONSES[randint(0,len(BOT_RESPONSES)-1)]
 
 if __name__ == "__main__":
     print(getSynonyms("exotic"))

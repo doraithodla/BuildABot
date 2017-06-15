@@ -3,6 +3,7 @@ NLU - (An apology for a) Natural Language Understanding Module
 '''
 
 from intents import *
+from botdata import *
 
 def getCommand(word):
     if word in ['define','whatis']:
@@ -11,6 +12,8 @@ def getCommand(word):
         return (QUIT)
     elif word in ['alternates', 'synonyms','syn','synonym']:
         return (SYNONYMS)
+    elif word in USER_GREETS:
+        return (GREETING)
     else:
         return (HELP)
 def extractInfo(text):

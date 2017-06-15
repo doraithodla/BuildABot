@@ -4,28 +4,30 @@ from nlu import *
 from intents import *
 import sys
 
-def print_greeting_help():
-    print("Hello, Welcome to WordBot")
-    reply = getHelp("")
-    for term in reply:
-        print(term)
+
 context = None
 
-print_greeting_help()
+print(getGreeting())
+reply = getHelp("")
+for term in reply:
+    print(term)
+
 while True:
     message = input("User: ")
     action, word = extractInfo(message)
 
     if action == GETWORDINFO:
         reply = getMeaning(word)
+    elif action == GREETING:
+        reply = getGreeting()
     elif action == QUIT:
         sys.exit()
     elif action == SYNONYMS:
-        #print(action, word)
         reply = getSynonyms(word)
     else:
         reply = dontknow(action)
 
-    print("WordBot: " + ' '.join(reply))
-
-    #print(reply)
+    if action == GREETING:
+        print("WordBot: " + reply)
+    else:
+        print ("WordBot: "+ ' '.join(reply))
