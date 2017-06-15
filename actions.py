@@ -29,8 +29,8 @@ def getAntonym(word):
 def getHelp(context):
     return [help_text]
 
-def dontknow(word):
-    return["Sorry. I don't understand %s" % word]
+def dontknow(action):
+    return["Sorry. I don't understand %s" % action]
 
 if __name__ == "__main__":
     print(getSynonyms("exotic"))
